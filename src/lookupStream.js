@@ -40,7 +40,7 @@ function createPipResolverStream(pipResolver) {
 
       // log results w/o country OR any multiples
       if (_.isEmpty(result.country)) {
-        logger.info('no country', {
+        logger.log('verbose','no country', {
           centroid: doc.getCentroid(),
           result: result
         });
