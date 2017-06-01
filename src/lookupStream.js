@@ -83,10 +83,8 @@ function createPipResolverStream(pipResolver) {
         logger.error('missing parent fields', {
           doc: doc.toString()
         }
-      );
-
+      )}
       callback(null, doc);
-
     });
   };
 }
