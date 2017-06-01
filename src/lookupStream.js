@@ -51,7 +51,7 @@ function createPipResolverStream(pipResolver) {
           result: result
         });
       }
-
+      try{
       doc.getParentFields()
         // filter out placetypes for which there are no values
         .filter((placetype) => { return !_.isEmpty(result[placetype]); } )
@@ -77,6 +77,11 @@ function createPipResolverStream(pipResolver) {
             });
           }
 
+        }
+      )
+      } catch (err){
+        logger.error('missing parent fields', {
+          doc: doc.toString()
         }
       );
 
